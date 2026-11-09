@@ -1,4 +1,5 @@
-#pragma once
+#ifndef VEHICULO_HPP
+#define VEHICULO_HPP
 #include <string>
 using namespace std;
 class Propietario;
