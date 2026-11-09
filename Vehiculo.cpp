@@ -1,6 +1,5 @@
 #include "Vehiculo.hpp"
 
-
     Vehiculo::Vehiculo(): placa ("no registrada"), modelo (0), color ("sin registrar"), propietario (nullptr){}
     Vehiculo::Vehiculo (string placa, string color, int modelo, Propietario* propietario):placa (placa),color (color),modelo (modelo),propietario (propietario){}
     Vehiculo::~Vehiculo(){}

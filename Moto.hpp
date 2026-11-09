@@ -1,6 +1,8 @@
-c:\Users\sofia\Desktop\Proyecto peaje\Encabezado\Vehiculo.hpp#pragma once
-#include <string>
+#ifndef MOTO_HPP
+#define MOTO_HPP
 #include "Vehiculo.hpp"
+#include <iostream>
+
 using namespace std;
 class Moto: public Vehiculo{
     private:
@@ -13,5 +15,6 @@ class Moto: public Vehiculo{
     int getCilindraje ();
 
     float calcularTarifa () override;
-
+    bool esAltoCilindraje(int cilindraje);
+    void informarAltoCilindraje();
 };
