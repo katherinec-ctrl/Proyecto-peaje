@@ -1,8 +1,11 @@
 #include "Moto.hpp"
-#include "Vehiculo.hpp"
+#include <iostream>
 
-    Moto::Moto(string placa, string color, int modelo,int cilindraje): 
-    Vehiculo (placa, color, modelo),cilindraje(cilindraje) {}
+    Moto::Moto(string placa, string color, int modelo, Propietario* propietario, int cilindraje): 
+    Vehiculo (placa, color, modelo, propietario),cilindraje(cilindraje) {}
+
+    Moto::Moto (string placa, string color, int modelo, int cilindraje):
+    Vehiculo (placa, color, modelo), cilindraje (cilindraje){}
 
     void Moto:: setCilindraje(int cilindraje){this->cilindraje=cilindraje;}
 

@@ -13,6 +13,7 @@ class Vehiculo{
     public:
     Vehiculo();
     Vehiculo (string placa, string color, int modelo, Propietario* propietario);
+    Vehiculo (string placa, string color, int modelo);
     virtual ~Vehiculo();
 
     void setPlaca(string placa);
@@ -27,3 +28,4 @@ class Vehiculo{
 
     virtual float calcularTarifa ()=0;
 };
+#endif

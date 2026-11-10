@@ -6,9 +6,11 @@ class Carro: public Vehiculo{
     private:
     int cantPasajeros;
     public:
-    Carro (string placa, string color, int modelo, int cantPasajeros);
+    Carro (string placa, string color, int modelo, Propietario* propietario, int cantPasajeros=1);
+    Carro (string placa, string color, int modelo, int cantPasajeros=1);
     void setCantPasajeros(int cantPasajeros);
     int getCantPasajeros();
-    float calcularTarifca () override;
+    float calcularTarifa () override;
     void agregarPasajero();
 };
+#endif

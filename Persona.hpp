@@ -16,3 +16,4 @@ class Persona{
     string getDocumento();
     string getDescrip();
 };
+#endif

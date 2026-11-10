@@ -9,3 +9,4 @@ class Propietario: public Persona{
     void setEsVecino(bool esVecino);
     bool getEsVecino();
 };
+#endif

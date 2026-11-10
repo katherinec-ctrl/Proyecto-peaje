@@ -1,7 +1,9 @@
 #include "Vehiculo.hpp"
+#include "Propietario.hpp"
 
     Vehiculo::Vehiculo(): placa ("no registrada"), modelo (0), color ("sin registrar"), propietario (nullptr){}
     Vehiculo::Vehiculo (string placa, string color, int modelo, Propietario* propietario):placa (placa),color (color),modelo (modelo),propietario (propietario){}
+    Vehiculo::Vehiculo (string placa, string color, int modelo): placa (placa), color (color), modelo (modelo), propietario (nullptr){}
     Vehiculo::~Vehiculo(){}
 
     void Vehiculo:: setPlaca(string placa){this->placa=placa;}

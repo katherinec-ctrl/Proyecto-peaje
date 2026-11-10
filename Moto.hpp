@@ -1,15 +1,14 @@
 #ifndef MOTO_HPP
 #define MOTO_HPP
 #include "Vehiculo.hpp"
-#include <iostream>
-
 using namespace std;
 class Moto: public Vehiculo{
     private:
     int cilindraje;
 
     public:
-    Moto (string placa, string color, int modelo,int cilindraje);
+    Moto (string placa, string color, int modelo, Propietario* propietario, int cilindraje);
+    Moto (string placa, string color, int modelo, int cilindraje);
 
     void setCilindraje (int);
     int getCilindraje ();
@@ -18,3 +17,4 @@ class Moto: public Vehiculo{
     bool esAltoCilindraje(int cilindraje);
     void informarAltoCilindraje();
 };
+#endif

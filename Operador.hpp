@@ -9,3 +9,4 @@ class Operador:public Persona{
     void setId(string id);
     string getId();
 };
+#endif
