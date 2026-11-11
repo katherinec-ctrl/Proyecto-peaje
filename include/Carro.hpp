@@ -9,6 +9,7 @@ class Carro: public Vehiculo{
     public:
     Carro (string placa, Propietario* propietario, int cantPasajeros=1);
     Carro (string placa,int cantPasajeros=1);
+    ~Carro() override;
     void setCantPasajeros(int cantPasajeros);
     int getCantPasajeros();
     void agregarPasajero();

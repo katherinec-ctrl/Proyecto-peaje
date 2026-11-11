@@ -24,6 +24,10 @@
 
     int Camion:: getCantEjes(){return this-> cantEjes;}
 
+    Camion:: ~Camion(){
+       cout << "Destruyendo camión" << this-> placa << endl;
+    }
+
     void Camion:: agregarEje(){
         cantEjes++;
     }

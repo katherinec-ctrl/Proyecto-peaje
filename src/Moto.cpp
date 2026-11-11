@@ -8,6 +8,10 @@
     Moto::Moto (string placa, int cilindraje):
     Vehiculo (placa), cilindraje (cilindraje){}
 
+    Moto:: ~Moto(){
+        cout << "Destruyendo moto" << this->placa <<endl;
+    }
+
     void Moto:: setCilindraje(int cilindraje){this->cilindraje=cilindraje;}
 
     int Moto:: getCilindraje(){return this-> cilindraje;}

@@ -18,6 +18,10 @@ Carro::Carro (string placa, int cantPasajeros):Vehiculo(placa){
     }
 }
 
+Carro::~Carro(){
+    cout <<"Destruyendo carro" << this-> placa << endl;
+}
+
 void Carro:: setCantPasajeros(int cantPasajeros){this->cantPasajeros=cantPasajeros;}
 
 int Carro:: getCantPasajeros(){return this->cantPasajeros;}

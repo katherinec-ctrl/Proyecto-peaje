@@ -9,6 +9,7 @@ class Camion: public Vehiculo{
     public:
     Camion (string placa, Propietario* propietario, int cantEjes=2);
     Camion (string placa, int cantEjes=2);
+    ~Camion() override;
 
     void setCantEjes (int);
     int getCantEjes();

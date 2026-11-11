@@ -1,18 +1,26 @@
 #ifndef CASETA_HPP
 #define CASETA_HPP
 #include <vector>
-class Operador;
-class Vehiculo; 
+#include <string>
+#include "Registro.hpp"
+#include "Vehiculo.hpp"
+class Operador; 
 using namespace std;
 class Caseta{
     private:
     Operador* operador;
-    vector <Vehiculo*> vehiculos;
+    vector <Registro*> registros;
+    float totalCaja;
+    int cantV;
+    int cantC;
+    int cantM;
+    int cantB;
+    int cantCa;
     public:
     Caseta (Operador* operador);
     void setOperador (Operador* operador);
     Operador* getOperador();
-    registrarVehiculo(vector <Vehiculo*> vehiculos);
+    void registrarPasoV(vegistro*> vregistros);
 
 };
 #endif

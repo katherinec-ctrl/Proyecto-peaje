@@ -1,7 +1,0 @@
-
-
-
-
-
-
-registrarPasoVehiculo(vector <Vehiculo*> vehiculos, 

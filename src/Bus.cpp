@@ -18,6 +18,10 @@ Bus:: Bus (string placa, int cantPuestos):
             this->cantPuestos=cantPuestos;
         }
         }
+Bus:: ~Bus(){
+    cout << "Destruyendo bus"<< this->placa<< endl;
+
+}
 
     void Bus:: setCantPuestos(int cantPuestos){this->cantPuestos=cantPuestos;}
     int Bus:: getCantPuestos(){return this->cantPuestos;}
