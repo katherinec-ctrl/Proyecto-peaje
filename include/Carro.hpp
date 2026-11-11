@@ -1,16 +1,21 @@
 #ifndef CARRO_HPP
 #define CARRO_HPP
 #include "Vehiculo.hpp"
+#include <iostream>
 using namespace std;
 class Carro: public Vehiculo{
     private:
     int cantPasajeros;
     public:
-    Carro (string placa, string color, int modelo, Propietario* propietario, int cantPasajeros=1);
-    Carro (string placa, string color, int modelo, int cantPasajeros=1);
+    Carro (string placa, Propietario* propietario, int cantPasajeros=1);
+    Carro (string placa,int cantPasajeros=1);
     void setCantPasajeros(int cantPasajeros);
     int getCantPasajeros();
-    float calcularTarifa () override;
     void agregarPasajero();
+    
+    string getTipo() const override;
+    float calcularTarifa () const override;
+    string info() const override;
+
 };
 #endif

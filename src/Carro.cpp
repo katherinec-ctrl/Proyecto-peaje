@@ -1,5 +1,6 @@
 #include "Carro.hpp"
-Carro:: Carro (string placa, string color, int modelo, Propietario* propietario, int cantPasajeros):Vehiculo(placa, color, modelo, propietario){
+#include "Propietario.hpp"
+Carro:: Carro (string placa, Propietario* propietario, int cantPasajeros):Vehiculo(placa, propietario){
     if (cantPasajeros<1){
         this->cantPasajeros=1;
     }
@@ -8,7 +9,7 @@ Carro:: Carro (string placa, string color, int modelo, Propietario* propietario,
     }
 }
 
-Carro::Carro (string placa, string color, int modelo, int cantPasajeros):Vehiculo(placa, color,modelo){
+Carro::Carro (string placa, int cantPasajeros):Vehiculo(placa){
     if (cantPasajeros<1){
         this->cantPasajeros=1;
     }
@@ -21,7 +22,15 @@ void Carro:: setCantPasajeros(int cantPasajeros){this->cantPasajeros=cantPasajer
 
 int Carro:: getCantPasajeros(){return this->cantPasajeros;}
 
-float Carro:: calcularTarifa(){
+void Carro:: agregarPasajero(){
+    cantPasajeros++;
+}
+
+string Carro:: getTipo() const {
+    return "carro";
+}
+
+float Carro:: calcularTarifa() const {
     float tarifa =10000+200*5;
     if (getPropietario()!=nullptr&&getPropietario()->getEsVecino()==true){
         float descuento=0.35;
@@ -30,7 +39,6 @@ float Carro:: calcularTarifa(){
     return tarifa;
 }
 
-void Carro:: agregarPasajero(){
-    cantPasajeros++;
+string Carro:: info() const{
+    return Vehiculo:: info() + "Cantidad de pasajeros:" + to_string (this->cantPasajeros);
 }
-
