@@ -1,5 +1,6 @@
 #ifndef REGISTRO_HPP
 #define REGISTRO_HPP
+#include <iostream>
 #include <string>
 using namespace std;
 class Registro{
@@ -9,6 +10,7 @@ class Registro{
     float valorCobrado;
     public: 
     Registro (string placa, string categoria, float valorCobrado);
+    ~Registro();
     string getPlaca();
     string getCategoria();
     float getValorCobrado();

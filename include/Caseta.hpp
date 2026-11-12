@@ -3,8 +3,8 @@
 #include <vector>
 #include <string>
 #include "Registro.hpp"
-#include "Vehiculo.hpp"
-class Operador; 
+#include "Vehiculo.hpp" 
+#include "Operador.hpp"
 using namespace std;
 class Caseta{
     private:
@@ -18,9 +18,14 @@ class Caseta{
     int cantCa;
     public:
     Caseta (Operador* operador);
+    ~Caseta();
+
     void setOperador (Operador* operador);
     Operador* getOperador();
-    void registrarPasoV(vegistro*> vregistros);
+   
+    void registrarPasoV(Vehiculo* vehiculo );
+    void mostrarRegistros();
+    void mostrarTotal();
 
 };
 #endif
