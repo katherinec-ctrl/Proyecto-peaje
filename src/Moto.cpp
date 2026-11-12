@@ -1,12 +1,23 @@
 #include "Moto.hpp"
 #include "Propietario.hpp"
+#include "Excepciones.hpp"
 #include <iostream>
 
     Moto::Moto(string placa, Propietario* propietario, int cilindraje): 
-    Vehiculo (placa, propietario),cilindraje(cilindraje) {}
+    Vehiculo (placa, propietario){
+        if (cilindraje <=0){
+            throw DatosInvalidosException("El cilindraje de una moto debe ser mayor a 0");
+        }
+        this->cilindraje =cilindraje;
+    }
 
     Moto::Moto (string placa, int cilindraje):
-    Vehiculo (placa), cilindraje (cilindraje){}
+    Vehiculo (placa){
+        if (cilindraje <=0){
+            throw DatosInvalidosException("El cilindraje de una moto debe ser mayor a 0");
+        }
+        this->cilindraje =cilindraje;
+    }
 
     Moto:: ~Moto(){
         cout << "Destruyendo moto" << this->placa <<endl;

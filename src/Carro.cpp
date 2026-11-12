@@ -1,19 +1,20 @@
 #include "Carro.hpp"
 #include "Propietario.hpp"
+#include "Excepciones.hpp"
 Carro:: Carro (string placa, Propietario* propietario, int cantPasajeros):Vehiculo(placa, propietario){
     if (cantPasajeros<1){
-        this->cantPasajeros=1;
+        throw DatosInvalidosException("Un carro debe tener por lo menos un pasajero");
     }
-    else{
+    {
         this->cantPasajeros=cantPasajeros;
     }
 }
 
 Carro::Carro (string placa, int cantPasajeros):Vehiculo(placa){
     if (cantPasajeros<1){
-        this->cantPasajeros=1;
+        throw DatosInvalidosException ("Un carro debe tener por lo menos un pasajero");
     }
-    else{
+    {
         this->cantPasajeros=cantPasajeros;
     }
 }

@@ -7,8 +7,8 @@ class Bus: public Vehiculo{
     private:
     int cantPuestos;
     public:
-    Bus (string placa, Propietario* propietario, int cantPuestos=1);
-    Bus (string placa, int cantPuestos=1);
+    Bus (string placa, Propietario* propietario, int cantPuestos);
+    Bus (string placa, int cantPuestos);
     ~Bus() override;
     void setCantPuestos(int cantPuestos);
     int getCantPuestos();

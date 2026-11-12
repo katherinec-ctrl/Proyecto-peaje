@@ -1,22 +1,19 @@
 #include "Bus.hpp"
+#include "Excepciones.hpp"
 Bus::Bus(string placa, Propietario* propietario, int cantPuestos):
     Vehiculo (placa){
         if (cantPuestos<1){
-            this->cantPuestos=1;
+            throw DatosInvalidosException ("El bus debe tener al menos un puesto");
         }
-        else{
             this->cantPuestos=cantPuestos;
-        }
     }
 
 Bus:: Bus (string placa, int cantPuestos):
     Vehiculo (placa){
         if (cantPuestos<1){
-            this->cantPuestos=1;
+            throw DatosInvalidosException ("El bus debe tener al menos un puesto");
         }
-        else{
             this->cantPuestos=cantPuestos;
-        }
         }
 Bus:: ~Bus(){
     cout << "Destruyendo bus"<< this->placa<< endl;

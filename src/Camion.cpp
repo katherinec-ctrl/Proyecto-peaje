@@ -1,32 +1,29 @@
 #include "Camion.hpp"
+#include "Excepciones.hpp"
 
     Camion::Camion(string placa, Propietario* propietario, int cantEjes): 
     Vehiculo (placa, propietario) {
         if (cantEjes<2){
-            this->cantEjes=2;
+            throw DatosInvalidosException ("El camión debe tener al menos dos ejes");
         }
-        else{
             this->cantEjes=cantEjes;
         }
-    }
 
     Camion::Camion(string placa, int cantEjes):
     Vehiculo (placa){
         if (cantEjes<2){
-            this->cantEjes=2;
+            throw DatosInvalidosException ("El camión debe tener al menos dos ejes");
         }
-        else{
             this->cantEjes=cantEjes;
         }
-    }
 
+Camion:: ~Camion(){
+       cout << "Destruyendo camión" << this-> placa << endl;
+    }
     void Camion:: setCantEjes(int cantEjes){this->cantEjes=cantEjes;}
 
     int Camion:: getCantEjes(){return this-> cantEjes;}
 
-    Camion:: ~Camion(){
-       cout << "Destruyendo camión" << this-> placa << endl;
-    }
 
     void Camion:: agregarEje(){
         cantEjes++;

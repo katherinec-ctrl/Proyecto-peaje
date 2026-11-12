@@ -1,4 +1,5 @@
 #include "Vehiculo.hpp"
+#include "Excepciones.hpp"
 
     Vehiculo::Vehiculo (string placa, Propietario* propietario){
         if (placa.length() <4){
