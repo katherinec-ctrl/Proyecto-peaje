@@ -32,7 +32,7 @@ void Carro:: agregarPasajero(){
 }
 
 string Carro:: getTipo() const {
-    return "carro";
+    return "Carro";
 }
 
 float Carro:: calcularTarifa() const {

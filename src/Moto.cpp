@@ -39,7 +39,7 @@
 
     void Moto:: informarAltoCilindraje(){
         if (esAltoCilindraje(cilindraje)==true){
-            cout <<"La moto con placa "<<getPlaca()<<"es de alto cilindraje"<<endl;
+            cout <<"La moto con placa "<< getPlaca()<< "es de alto cilindraje"<<endl;
         }
         }
 

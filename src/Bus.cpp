@@ -28,7 +28,7 @@ Bus:: ~Bus(){
     }
     
     float Bus:: calcularTarifa() const {
-        return 140000;
+        return 14000;
     }
 
     string Bus:: info() const {

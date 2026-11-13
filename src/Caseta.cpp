@@ -11,7 +11,11 @@ using namespace std;
 Caseta::Caseta(Operador* operador): 
 operador(operador),totalCaja(0),cantV(0), cantC(0), cantM(0), cantB(0),cantCa(0){}
 Caseta::~Caseta(){
-cout <<"Liberando caseta..."<<endl;
+    for (int i = 0; i < registros.size(); i++) {
+        delete registros[i];
+    }
+    registros.clear();
+    cout << "Destruyendo caseta..." << endl;
 }
 
 void Caseta:: setOperador(Operador* operador){this->operador=operador;}

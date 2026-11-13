@@ -17,7 +17,7 @@ class Moto: public Vehiculo{
     bool esAltoCilindraje(int cilindraje);
     void informarAltoCilindraje();  
     
-    string getTipo() const override {}
+    string getTipo() const override;
     float calcularTarifa () const override;
     string info() const override;
 };
