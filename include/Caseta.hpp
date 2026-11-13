@@ -22,10 +22,14 @@ class Caseta{
 
     void setOperador (Operador* operador);
     Operador* getOperador();
+    float getTotalCaja();
+    int getCantV();
+    int getCantC();
+    int getCantM();
+    int getCantB();
+    int getCantCa();
    
     void registrarPasoV(Vehiculo* vehiculo );
-    void mostrarRegistros();
-    void mostrarTotal();
 
 };
 #endif

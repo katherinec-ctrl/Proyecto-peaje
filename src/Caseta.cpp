@@ -16,12 +16,24 @@ cout <<"Liberando caseta..."<<endl;
 
 void Caseta:: setOperador(Operador* operador){this->operador=operador;}
 Operador* Caseta:: getOperador(){return this->operador;}
+float Caseta:: getTotalCaja(){ return this->totalCaja;}
+int Caseta:: getCantV(){ return this->cantV;}
+int Caseta:: getCantC(){return this->cantC;}
+int Caseta:: getCantM(){return this->cantM;}
+int Caseta:: getCantB(){return this->cantB;}
+int Caseta:: getCantCa(){return this->cantCa;}
+
 
 void Caseta:: registrarPasoV (Vehiculo* vehiculo){
     if (vehiculo==nullptr){
         return;
     }
     string categoria= vehiculo->getTipo();
+    float valorCobrado = vehiculo->calcularTarifa();
+    Registro* nuevoRegistro = new Registro(vehiculo->getPlaca(), categoria, valorCobrado);
+    registros.push_back(nuevoRegistro);
+    totalCaja+=valorCobrado;
+    cantV++;
     if (categoria =="Carro"){
         cantC++;
     }
@@ -34,11 +46,6 @@ void Caseta:: registrarPasoV (Vehiculo* vehiculo){
     else if (categoria == "Camion"){
         cantCa ++;
     }
-    float valorCobrado = vehiculo->calcularTarifa();
-    Registro* nuevoRegistro = new Registro(vehiculo->getPlaca(), categoria, valorCobrado);
-    registros.push_back(nuevoRegistro);
-    totalCaja+=valorCobrado;
-    cantV++;
 }
 
 
