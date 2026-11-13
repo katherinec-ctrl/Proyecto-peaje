@@ -1,0 +1,4 @@
+104626011505
+No se puede crear un objeto vehículo directamente debido a que es una clase abstracta que contiene métodos virtuales puros, por lo que obliga a sus clases derivadas a implementarlas según sus propios requerimientos, luego entonces, solo es posible crear objetos de las clases concretas derivadas de vehículo. 
+El destructor de vehículo es virtual debido a que de esta manera se libera de manera completa el espacio de memoria del tipo de vehículo y el vehículo en sí mismo, así pues, se ejecuta el destructor de la clase derivada y luego el de la clase base. 
+Si se llama al método registrarPasoV con un puntero nulo, el programa termina la ejecución del método mediante un return, esto esperando evitar intentar acceder a atributos o métodos de objetos no existentes, garantizando únicamente el registro de vehículos válidos. Para evitar terminar el programa, se hubiese podido manejar con una excepción para no terminar el programa. 
