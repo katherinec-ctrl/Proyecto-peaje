@@ -36,19 +36,17 @@ int main(){
     do {
         cout <<"        PEAJE NORTE CERRO VERDE         " <<endl;
         cout <<"Dijite una opción\n";
-        cout << "1. CASO 1\n";
-        cout << "2. Caso 2\n";
-        cout << "3. Caso 3\n";
-        cout << "4. CASO 4\n";
-        cout << "5. Caso 5\n";
-        cout << "6. Caso 6\n";
-        cout << "7. CASO 7\n";
-        cout << "8. Caso 8\n";
-        cout << "9. Caso 9\n";
-        cout << "10.Caso 10\n";
-        cout << "11. Caso 11\n";
-        cout << "12. Caso 12 \n";
-        cout << "13. CASO 13\n";
+        cout << "1. CASO 1: tarifa carro propietario no local \n";
+        cout << "2. Caso 2: tarifa carro propietario local \n";
+        cout << "3. Caso 3: tarifa moto propietario local\n";
+        cout << "4. CASO 4: tarifa moto sin propietario y de alto cilindraje\n";
+        cout << "5. Caso 5: tarifa bus propietario local \n";
+        cout << "6. Caso 6: tarifa camión sin propietario \n";
+        cout << "7. CASO 7: tarifa camión caso 6 más un eje \n";
+        cout << "8. Caso 8: carro con plaaca vacía\n";
+        cout << "9. Caso 9: camión con un solo eje \n";
+        cout << "10.Caso 10: recaudo total y conteo x categoría casos 2,3,5,7\n";
+        cout << "11. Caso 11: liberar caseta y vehículos caso 10 \n";
         cout << "0. Salir\n";
         cin >> opc;
        try{
@@ -99,13 +97,11 @@ int main(){
         case 8: {
            Carro* carroDefectuoso= new Carro(" ", 2);
             vehiculos.push_back(carro1);
-            cout <<"Tarifa: $"<<carro1->calcularTarifa();
             break;
         }
         case 9: {
             Camion* camionDefectuoso= new Camion ("CAM666",1);
             vehiculos.push_back(camion1);
-            cout<<"Tarifa: $"<<camion1->calcularTarifa();
             break;
         }
         case 10:{
@@ -119,21 +115,21 @@ int main(){
            caseta->registrarPasoV(camion1);
            cout <<"Información del peaje: \n";
            cout << "Total de vehículos que pasaron: "<< caseta->getCantV()<<endl;
-           cout << "Cantidad de carro: "<< caseta->getCantC()<<endl;
+           cout << "Cantidad de carros: "<< caseta->getCantC()<<endl;
            cout <<"Cantidad de Motos: "<<caseta->getCantM()<<endl;
            cout <<"Cantidad de Buses: "<<caseta->getCantB()<<endl;
            cout <<"Cantidad de Camiones: " << caseta->getCantCa()<<endl;
            cout <<"Total recaudado por la caseta: "<< caseta->getTotalCaja()<<endl;
            break;
         }
-        case 12:{
+        case 11:{
          delete caseta;
-         for (int i =0; i<vehiculos.size();i++){
+         vector <Vehiculo*>vehiculosCass= {carro1, moto1, bus1, camion1};
+         for (int i=0; i<vehiculosCass.size();i++){
          delete vehiculos[i];
         }
-         vehiculos.clear();
+         vehiculosCass.clear();
         }
-
         case 0: 
             cout <<"Saliendo...\n";
             break;
@@ -145,6 +141,11 @@ int main(){
         cout <<e.what()<<endl;
     }
     } while(opc!=0);
+
+         for (int i =0; i<vehiculos.size();i++){
+         delete vehiculos[i];
+        }
+         vehiculos.clear();
 
     for (int i =0;i<personas.size();i++){
         delete personas[i];
